@@ -1,0 +1,87 @@
+// function to show the menu and apply fixes on the other element when the menu is visible on small device
+$(document).ready(function() {
+  $("#navbar-Button").click(function(event){
+    event.preventDefault();
+      if ($(this).hasClass("notinPage") ) {
+        if($("#filter-menu").hasClass("active")){
+          $("#search-filter-button").trigger("click");
+        }
+        $("body").addClass("body-fix");
+        $("#bs-example-navbar-collapse-1").addClass("menu-slide");
+        $("#bs-example-navbar-collapse-1").css("left","0%"); 
+        $("#main-wrapper").css("left","80%");
+        $("#main-wrapper").addClass("body-overflow");    
+        $(this).removeClass("notinPage");
+        $("#menu-faded-bg").css("display", "block");
+        $('#main-wrapper').bind('touchmove', function(){
+          event.preventDefault();
+        });
+      } else {
+        $("body").removeClass("body-fix");
+        $("#bs-example-navbar-collapse-1").css("left","-100%"); 
+        $("#main-wrapper").css("left","0%");
+        $("#main-wrapper").removeClass("body-overflow");     
+        $(this).addClass("notinPage");
+        $('#menu-faded-bg').unbind('touchmove');
+        $("#menu-faded-bg").css("display", "none");
+      }
+      return false;
+  });   
+});
+
+$(document).ready(function(){
+   $(document).on("click","#menu-faded-bg",function(){
+      $("body").removeClass("body-fix");
+      $("#bs-example-navbar-collapse-1").css("left","-100%"); 
+      $("#main-wrapper").css("left","0%");
+      $("#main-wrapper").removeClass("body-overflow");      
+      $("#navbar-Button").addClass("notinPage");
+      $('#menu-faded-bg').unbind('touchmove');
+      $("#menu-faded-bg").css("display", "none");
+    });   
+
+    $(document).on('touchmove','#menu-faded-bg', function(){
+      $("body").removeClass("body-fix");
+      $("#bs-example-navbar-collapse-1").css("left","-100%"); 
+      $("#main-wrapper").css("left","0%");
+      $("#main-wrapper").removeClass("body-overflow");     
+      $("#navbar-Button").addClass("notinPage");
+      $('#menu-faded-bg').unbind('touchmove');
+      $("#menu-faded-bg").css("display", "none");
+      });
+    //trigger click once the user selects a result from the dropdown in autocomplete
+    $(document).on("click",".acResults",function(){
+        if($(window).innerWidth() >= 768){
+          $('#searchButton').trigger('click');
+        }
+        else{
+          if($('#searchButton').length != 0){
+            $('#searchButton').trigger('click');
+          }
+          else{
+            $('#searchButtonInline').trigger('click');
+          }
+        }
+       });
+
+    // show autocomplete on any event on the search bar
+    $('#searchBox').keydown(function(e) {
+      if (e.keyCode == 13 && $.trim($(this).val()) == '') {
+        e.preventDefault();
+      }
+    });
+    $('#searchBox').autocomplete("//suggestqueries.google.com/complete/search?client=books&ds=bo");
+});
+
+/*bootstrap ie10 compatible*/
+if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+  var msViewportStyle = document.createElement("style");
+  msViewportStyle.appendChild(
+    document.createTextNode(
+      "@-ms-viewport{width:auto!important}"
+    )
+  );
+  document.getElementsByTagName("head")[0].
+    appendChild(msViewportStyle);
+}
+

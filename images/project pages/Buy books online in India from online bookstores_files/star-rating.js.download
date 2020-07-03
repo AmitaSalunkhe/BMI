@@ -1,0 +1,1 @@
+$.fn.starsibs=function(){return $(this).each(function(){var c=parseFloat($(this).html());c=Math.max(0,(Math.min(5,isNaN(c)?0:c)));var d=$(this).hasClass("starred")?12:16;$(this).empty().append($("<span />").width(c*d)).attr("title",c)})};
