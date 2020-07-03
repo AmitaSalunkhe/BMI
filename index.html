@@ -1,11 +1,12 @@
 <html>
     <head>
-        <title> first</title>
+        <title> BMI</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
 <style>
 html
 {
@@ -20,7 +21,7 @@ html
     
        
       <nav class="navbar navbar-expand-lg navbar-light fixed-top " style="background-color:rgb(177, 180, 196) ; " >
-        <a class="navbar-brand text-light" href="#" style="text-decoration: none; margin-left: 200px; font-size: 40px; font-family: Forte;">BMI</a>
+        <a class="navbar-brand text-light a1" href="#" >BMI</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -80,38 +81,44 @@ html
   </div>
 
     <div>
-   <table class="table table-dark" style="width: 500px; margin-left: 400px;"><br><br>
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">BMI</th>
-          <th scope="col">Weight Status</th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Below 18</td>
-          <td>underweight</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>18-25</td>
-          <td>Normal Weight</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>25-30</td>
-          <td>Over Weight</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-        <td>above 30</td>
-      <td>Obese</td>
-      </tr>
-      </tbody>
-    </table>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-6">
+          <table class="table table-dark" style="width: 500px; "><br><br>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">BMI</th>
+                <th scope="col">Weight Status</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Below 18</td>
+                <td>underweight</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>18-25</td>
+                <td>Normal Weight</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>25-30</td>
+                <td>Over Weight</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+              <td>above 30</td>
+            <td>Obese</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+   
     <i id="cal"></i>
     <br> <br>
   </div>
@@ -119,10 +126,10 @@ html
 
 
   <div class="row" >
-  <div class="col-4"  ><br><br>
+  <div class="col-5"  ><br><br>
     <img src="images/istockphoto-528072248-1024x1024.jpg" class="rounded-circle" width="400px" style="margin-left: 70px;"><br><br>
   </div>
-  <div class="col-4" style="margin-left: 70px;"><br><br>
+  <div class="col-5" style="margin-left: 70px;"><br><br>
     <h2 style="margin-left: 35px;">How to calculate BMI</h2>
     <p>Body mass index (BMI) is a measure of body fat based on height<br> and weight that applies to adult men and women.</p>
     <ul>
@@ -133,7 +140,7 @@ html
 </div>
 
 
-           <div  style="background-color:hotpink; color:white; font-size:25px;" ><br> <br>
+           <div  class="frm" ><br> <br>
             <div class="row">
             <div class="col-3">
             </div>
@@ -158,10 +165,10 @@ html
                 <div class="col-3">
                 </div>
                 <div class="col-3">
-               <button onclick="bmical()" class="btn btn-lg " style="background-color:darkmagenta; color: white;">BMI</button><br> <br>
+               <button onclick="bmical()" class="btn btn-lg btn1 " >BMI</button><br> <br>
                 </div>
                <div class="col-3">
-               <h4 class="neww"></h4>
+               <h4 class="neww" style="color: black;"></h4>
            </div>
            </div>
 </div>
